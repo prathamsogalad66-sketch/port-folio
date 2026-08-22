@@ -1,0 +1,322 @@
+/* ==============================
+   ABOUT PAGE
+================================ */
+
+.page {
+    min-height: 100vh;
+    padding: 120px 20px 90px;
+
+    background:
+        radial-gradient(circle at 15% 20%,
+            rgba(0, 229, 255, 0.10),
+            transparent 30%),
+        radial-gradient(circle at 85% 70%,
+            rgba(139, 92, 246, 0.12),
+            transparent 30%),
+        #050816;
+
+    color: #ffffff;
+}
+
+
+/* ==============================
+   CENTER CONTAINER
+================================ */
+
+.page-container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+
+/* ==============================
+   SMALL PAGE LABEL
+================================ */
+
+.page-label {
+    display: inline-block;
+
+    margin-bottom: 18px;
+
+    color: #00e5ff;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+
+/* ==============================
+   MAIN TITLE
+================================ */
+
+.page-title {
+    margin: 0;
+
+    font-size: clamp(50px, 7vw, 78px);
+
+    font-weight: 800;
+
+    line-height: 1.05;
+
+    letter-spacing: -2px;
+
+    color: #ffffff;
+}
+
+
+/* Gradient "Me." */
+
+.page-title span {
+    background: linear-gradient(90deg,
+            #00e5ff,
+            #3b82f6,
+            #8b5cf6);
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    background-clip: text;
+}
+
+
+/* ==============================
+   DESCRIPTION
+================================ */
+
+.page-description {
+    max-width: 760px;
+
+    margin: 28px auto 60px;
+
+    color: #aebbd0;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    font-weight: 400;
+}
+
+
+/* ==============================
+   CARDS CONTAINER
+================================ */
+
+.cards {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+
+    margin-top: 20px;
+}
+
+
+/* ==============================
+   CARD
+================================ */
+
+.card {
+    position: relative;
+
+    padding: 38px 30px;
+
+    min-height: 280px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(145deg,
+            rgba(15, 35, 60, 0.85),
+            rgba(12, 18, 42, 0.85));
+
+    border: 1px solid rgba(255, 255, 255, 0.10);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.25);
+
+    backdrop-filter: blur(12px);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* Top glowing line */
+
+.card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 15%;
+
+    width: 70%;
+    height: 2px;
+
+    background: linear-gradient(90deg,
+            transparent,
+            #00e5ff,
+            #8b5cf6,
+            transparent);
+
+    opacity: 0;
+
+    transition: 0.3s;
+}
+
+
+/* ==============================
+   CARD HOVER
+================================ */
+
+.card:hover {
+    transform: translateY(-10px);
+
+    border-color: rgba(0, 229, 255, 0.35);
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.40),
+        0 0 30px rgba(0, 229, 255, 0.08);
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+
+/* ==============================
+   CARD ICON
+================================ */
+
+.card-icon {
+    width: 65px;
+    height: 65px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 22px;
+
+    border-radius: 18px;
+
+    background: rgba(0, 229, 255, 0.08);
+
+    border: 1px solid rgba(0, 229, 255, 0.18);
+
+    font-size: 30px;
+
+    box-shadow:
+        0 0 25px rgba(0, 229, 255, 0.08);
+
+    transition: 0.3s;
+}
+
+
+/* Icon hover */
+
+.card:hover .card-icon {
+    transform: scale(1.08);
+
+    background: rgba(0, 229, 255, 0.13);
+
+    border-color: rgba(0, 229, 255, 0.4);
+}
+
+
+/* ==============================
+   CARD TITLE
+================================ */
+
+.card h3 {
+    margin: 0 0 14px;
+
+    font-size: 21px;
+
+    font-weight: 700;
+
+    color: #ffffff;
+}
+
+
+/* ==============================
+   CARD DESCRIPTION
+================================ */
+
+.card p {
+    margin: 0;
+
+    color: #94a3b8;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+
+/* ==============================
+   MOBILE
+================================ */
+
+@media (max-width: 850px) {
+
+    .page {
+        padding-top: 110px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+        max-width: 550px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .page-description {
+        font-size: 16px;
+    }
+}
+
+
+/* ==============================
+   SMALL MOBILE
+================================ */
+
+@media (max-width: 500px) {
+
+    .page {
+        padding: 100px 15px 60px;
+    }
+
+    .page-title {
+        font-size: 48px;
+    }
+
+    .page-label {
+        font-size: 11px;
+        letter-spacing: 3px;
+    }
+
+    .card {
+        padding: 32px 22px;
+    }
+}
