@@ -5,7 +5,7 @@ function Navbar() {
     <nav className="navbar">
 
       <Link to="/" className="logo">
-        WHITE444<span></span>
+        PS<span></span>
       </Link>
 
       <div className="nav-links">
