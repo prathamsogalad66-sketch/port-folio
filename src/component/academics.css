@@ -1,407 +1,243 @@
 /* =========================================
-   ACADEMICS PAGE
+   ACADEMICS & SKILLS SECTION STYLES
 ========================================= */
 
-.page {
-    min-height: 100vh;
-    padding: 120px 20px 90px;
-
-    background:
-        radial-gradient(circle at 15% 20%,
-            rgba(0, 229, 255, 0.10),
-            transparent 30%),
-        radial-gradient(circle at 85% 70%,
-            rgba(139, 92, 246, 0.12),
-            transparent 30%),
-        #050816;
-
-    color: #ffffff;
+.academic-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin-bottom: 70px;
 }
 
+.card-year-tag {
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--cyan);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background: rgba(0, 229, 255, 0.1);
+  padding: 4px 12px;
+  border-radius: 50px;
+  border: 1px solid rgba(0, 229, 255, 0.25);
+  margin-bottom: 12px;
+}
+
+.college-name {
+  color: #38bdf8 !important;
+  font-weight: 600;
+  font-size: 15px !important;
+  margin-bottom: 10px;
+}
+
+.card-subtext {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
 
 /* =========================================
-   MAIN CONTAINER
+   SKILLS SECTION WRAPPER
 ========================================= */
-
-.page-container {
-    width: 100%;
-    max-width: 1100px;
-    margin: 0 auto;
-
-    text-align: center;
+.skills-section-wrapper {
+  margin-top: 40px;
+  text-align: left;
 }
 
-
-/* =========================================
-   PAGE LABEL
-========================================= */
-
-.page-label {
-    display: inline-block;
-
-    margin-bottom: 18px;
-
-    color: #00e5ff;
-
-    font-size: 14px;
-    font-weight: 700;
-
-    letter-spacing: 4px;
-    text-transform: uppercase;
+.skills-heading-container {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 50px;
 }
 
-
-/* =========================================
-   PAGE TITLE
-========================================= */
-
-.page-title {
-    margin: 0;
-
-    font-size: clamp(50px, 7vw, 78px);
-
-    line-height: 1.05;
-
-    font-weight: 800;
-
-    letter-spacing: -2px;
-
-    color: #ffffff;
+.section-subtitle {
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(32px, 4.5vw, 46px);
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 12px;
 }
 
-
-/* Gradient text */
-
-.page-title span {
-    background: linear-gradient(90deg,
-            #00e5ff,
-            #3b82f6,
-            #8b5cf6);
-
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-
-    background-clip: text;
+.section-subtitle span {
+  background: linear-gradient(90deg, var(--cyan), var(--blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-
-/* =========================================
-   DESCRIPTION
-========================================= */
-
-.page-description {
-    max-width: 760px;
-
-    margin: 28px auto 60px;
-
-    color: #aebbd0;
-
-    font-size: 18px;
-
-    line-height: 1.8;
+.skills-subtitle {
+  color: var(--muted);
+  font-size: 16px;
 }
 
-
-/* =========================================
-   ACADEMIC CARDS
-========================================= */
-
-.cards {
-    width: 100%;
-
-    display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 25px;
-
-    margin: 0 auto;
+/* Skills Category 2x2 Grid */
+.skills-category-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
 }
 
-
-/* =========================================
-   CARD
-========================================= */
-
-.card {
-    position: relative;
-
-    min-height: 280px;
-
-    padding: 38px 30px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    justify-content: center;
-
-    text-align: center;
-
-    background:
-        linear-gradient(145deg,
-            rgba(15, 35, 60, 0.88),
-            rgba(12, 18, 42, 0.88));
-
-    border: 1px solid rgba(255, 255, 255, 0.10);
-
-    border-radius: 22px;
-
-    box-shadow:
-        0 20px 50px rgba(0, 0, 0, 0.25);
-
-    backdrop-filter: blur(12px);
-
-    transition: 0.3s ease;
+.category-card {
+  padding: 34px 30px;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(145deg, rgba(14, 32, 60, 0.85), rgba(12, 16, 40, 0.9));
+  border: 1px solid var(--border);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(14px);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
 }
 
-
-/* Card top glow */
-
-.card::before {
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-    left: 15%;
-
-    width: 70%;
-    height: 2px;
-
-    background: linear-gradient(90deg,
-            transparent,
-            #00e5ff,
-            #8b5cf6,
-            transparent);
-
-    opacity: 0;
-
-    transition: 0.3s;
+.category-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(0, 229, 255, 0.35);
+  box-shadow: 0 25px 55px rgba(0, 0, 0, 0.4), 0 0 25px rgba(0, 229, 255, 0.08);
 }
 
-
-/* Card hover */
-
-.card:hover {
-    transform: translateY(-10px);
-
-    border-color: rgba(0, 229, 255, 0.35);
-
-    box-shadow:
-        0 25px 60px rgba(0, 0, 0, 0.4),
-        0 0 30px rgba(0, 229, 255, 0.08);
+.category-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.card:hover::before {
-    opacity: 1;
+.category-icon {
+  font-size: 30px;
+  padding: 8px;
+  border-radius: 12px;
+  background: rgba(0, 229, 255, 0.08);
+  border: 1px solid rgba(0, 229, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-
-/* =========================================
-   CARD ICON
-========================================= */
-
-.card-icon {
-    width: 65px;
-    height: 65px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    margin-bottom: 22px;
-
-    border-radius: 18px;
-
-    background: rgba(0, 229, 255, 0.08);
-
-    border: 1px solid rgba(0, 229, 255, 0.18);
-
-    font-size: 30px;
-
-    box-shadow:
-        0 0 25px rgba(0, 229, 255, 0.08);
-
-    transition: 0.3s;
+.category-header h3 {
+  font-family: 'Manrope', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 4px;
 }
 
-.card:hover .card-icon {
-    transform: scale(1.08);
-
-    background: rgba(0, 229, 255, 0.13);
-
-    border-color: rgba(0, 229, 255, 0.4);
+.category-tagline {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.4;
 }
 
-
-/* =========================================
-   CARD TITLE
-========================================= */
-
-.card h3 {
-    margin-bottom: 14px;
-
-    font-size: 21px;
-
-    font-weight: 700;
-
-    color: #ffffff;
+/* Attractive Skill Badges (No Percentages, No Comparison Bars) */
+.skills-badge-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 14px;
 }
 
-
-/* =========================================
-   CARD TEXT
-========================================= */
-
-.card p {
-    margin: 4px 0;
-
-    color: #94a3b8;
-
-    font-size: 15px;
-
-    line-height: 1.7;
+.skill-card-badge {
+  padding: 16px 18px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.25s ease;
+  display: flex;
+  flex-direction: column;
 }
 
-
-/* =========================================
-   TECHNICAL SKILLS TITLE
-========================================= */
-
-.page-container h2 {
-    margin-bottom: 30px;
-
-    font-size: 32px;
-
-    font-weight: 700;
-
-    color: #ffffff;
+.skill-card-badge:hover {
+  transform: translateY(-4px);
+  border-color: var(--cyan);
+  background: rgba(0, 229, 255, 0.05);
+  box-shadow: 0 8px 25px rgba(0, 229, 255, 0.12);
 }
 
-
-/* =========================================
-   SKILLS CONTAINER
-========================================= */
-
-.skills {
-    max-width: 900px;
-
-    margin: 0 auto;
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    flex-wrap: wrap;
-
-    gap: 15px;
+.skill-badge-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
 }
 
-
-/* =========================================
-   INDIVIDUAL SKILL
-========================================= */
-
-.skill {
-    padding: 12px 20px;
-
-    border-radius: 50px;
-
-    color: #dbeafe;
-
-    font-size: 14px;
-
-    font-weight: 600;
-
-    background:
-        linear-gradient(135deg,
-            rgba(0, 229, 255, 0.08),
-            rgba(139, 92, 246, 0.10));
-
-    border: 1px solid rgba(0, 229, 255, 0.18);
-
-    transition: 0.3s ease;
-
-    cursor: default;
+.skill-badge-icon {
+  font-size: 18px;
 }
 
-
-/* Skill hover */
-
-.skill:hover {
-    color: #ffffff;
-
-    transform: translateY(-4px);
-
-    border-color: #00e5ff;
-
-    box-shadow:
-        0 0 20px rgba(0, 229, 255, 0.15);
-
-    background:
-        linear-gradient(135deg,
-            rgba(0, 229, 255, 0.15),
-            rgba(139, 92, 246, 0.15));
+.skill-badge-title {
+  font-family: 'Manrope', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #ffffff;
 }
 
-
-/* =========================================
-   MOBILE
-========================================= */
-
-@media (max-width: 850px) {
-
-    .page {
-        padding-top: 110px;
-    }
-
-    .cards {
-        grid-template-columns: 1fr;
-
-        max-width: 550px;
-    }
-
-    .page-description {
-        font-size: 16px;
-    }
-
+.skill-badge-tag {
+  font-size: 12.5px;
+  color: #94a3b8;
+  line-height: 1.4;
+  margin: 0;
 }
 
+/* Summary Pills Box */
+.all-skills-summary-box {
+  margin-top: 50px;
+  padding: 34px 30px;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(145deg, rgba(14, 32, 60, 0.6), rgba(12, 16, 40, 0.7));
+  border: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+  text-align: center;
+}
 
-/* =========================================
-   SMALL MOBILE
-========================================= */
+.summary-title {
+  font-family: 'Manrope', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--cyan);
+  margin-bottom: 20px;
+}
 
-@media (max-width: 500px) {
+.summary-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
 
-    .page {
-        padding: 100px 15px 60px;
-    }
+.pill-item {
+  padding: 8px 18px;
+  border-radius: 50px;
+  background: rgba(0, 229, 255, 0.08);
+  border: 1px solid rgba(0, 229, 255, 0.25);
+  color: #e0f2fe;
+  font-size: 13.5px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: all 0.25s ease;
+  cursor: default;
+}
 
-    .page-title {
-        font-size: 48px;
-    }
+.pill-item:hover {
+  background: var(--cyan);
+  color: #031018;
+  border-color: var(--cyan);
+  transform: translateY(-2px);
+  box-shadow: 0 0 15px rgba(0, 229, 255, 0.4);
+}
 
-    .page-label {
-        font-size: 11px;
+@media (max-width: 950px) {
+  .academic-cards {
+    grid-template-columns: 1fr;
+  }
 
-        letter-spacing: 3px;
-    }
+  .skills-category-grid {
+    grid-template-columns: 1fr;
+  }
+}
 
-    .card {
-        padding: 32px 22px;
-    }
-
-    .skill {
-        font-size: 13px;
-
-        padding: 10px 16px;
-    }
-
+@media (max-width: 600px) {
+  .skills-badge-grid {
+    grid-template-columns: 1fr;
+  }
 }
