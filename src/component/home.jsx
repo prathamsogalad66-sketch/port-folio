@@ -102,20 +102,21 @@ function Home() {
               <span className="stat-number">3 Days</span>
               <span className="stat-label">NEXORA Car Site</span>
             </div>
-            <div className="stat-divider"></div>
             <div className="stat-item">
               <span className="stat-number">Science Day</span>
               <span className="stat-label">Telemedicine Model</span>
             </div>
-            <div className="stat-divider"></div>
+            <div className="stat-item">
+              <span className="stat-number">5 Certs</span>
+              <span className="stat-label">Google &amp; Infosys</span>
+            </div>
             <div className="stat-item">
               <span className="stat-number">Python &amp; C</span>
               <span className="stat-label">Core Languages</span>
             </div>
-            <div className="stat-divider"></div>
             <div className="stat-item">
               <span className="stat-number">SDMCET</span>
-              <span className="stat-label">AIML Engineering</span>
+              <span className="stat-label">AIML 2nd Year</span>
             </div>
           </div>
         </div>

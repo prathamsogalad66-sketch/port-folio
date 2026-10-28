@@ -34,7 +34,7 @@ function Navbar() {
             className={({ isActive }) => (isActive ? "active" : "")}
             onClick={closeMenu}
           >
-            Academics
+            Academics &amp; Certs
           </NavLink>
           <NavLink
             to="/project"

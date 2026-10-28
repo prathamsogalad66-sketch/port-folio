@@ -1,4 +1,75 @@
+import { useState } from "react";
 import "./academics.css";
+
+// Import Certificates
+import certGoogleAI from "../assets/certificates/cert-google-ai.png";
+import certGooglePrompting from "../assets/certificates/cert-google-prompting-essentials.png";
+import certGoogleAIEssentials from "../assets/certificates/cert-google-ai-essentials.png";
+import certInfosysJS from "../assets/certificates/cert-infosys-javascript.png";
+import certInfosysHTML5 from "../assets/certificates/cert-infosys-html5.png";
+
+const CERTIFICATES = [
+  {
+    id: "cert-1",
+    title: "Google AI Professional Certificate",
+    issuer: "Google | Coursera",
+    issuerType: "google",
+    courses: "7 Comprehensive Courses",
+    date: "July 2026",
+    image: certGoogleAI,
+    description:
+      "Advanced professional program covering AI Fundamentals, AI for Brainstorming & Planning, Research & Insights, Content Creation, Data Analysis, and App Building with AI tools.",
+    skillsLearned: ["AI Fundamentals", "Data Analysis with AI", "Prompting", "App Building"]
+  },
+  {
+    id: "cert-2",
+    title: "Google Prompting Essentials Specialization",
+    issuer: "Google | Coursera",
+    issuerType: "google",
+    courses: "4 Specialized Courses",
+    date: "July 2026",
+    image: certGooglePrompting,
+    description:
+      "Hands-on specialization developing advanced AI prompt engineering: designing prompts for everyday workflows, accelerating data analysis, presentation building, and creative collaboration.",
+    skillsLearned: ["Prompt Engineering", "Workflow Automation", "AI Collaboration", "Context Framing"]
+  },
+  {
+    id: "cert-3",
+    title: "Google AI Essentials Specialization",
+    issuer: "Google | Coursera",
+    issuerType: "google",
+    courses: "5 Specialized Courses",
+    date: "July 2026",
+    image: certGoogleAIEssentials,
+    description:
+      "Foundational AI curriculum by Google focusing on intelligent agent systems, maximizing developer productivity with AI tools, the art of prompting, and responsible AI governance.",
+    skillsLearned: ["Generative AI", "Responsible AI", "Productivity Tools", "AI Principles"]
+  },
+  {
+    id: "cert-4",
+    title: "JavaScript",
+    issuer: "Infosys Springboard",
+    issuerType: "infosys",
+    courses: "Course Completion",
+    date: "August 2026",
+    image: certInfosysJS,
+    description:
+      "Certified course covering JavaScript core concepts, asynchronous operations, event-driven programming, modern ES6+ features, and interactive frontend development.",
+    skillsLearned: ["JavaScript (ES6+)", "DOM Manipulation", "Asynchronous Logic", "Functions"]
+  },
+  {
+    id: "cert-5",
+    title: "HTML5 - The Language",
+    issuer: "Infosys Springboard",
+    issuerType: "infosys",
+    courses: "Course Completion",
+    date: "August 2026",
+    image: certInfosysHTML5,
+    description:
+      "Certified course covering semantic HTML5 architecture, responsive markup standards, web accessibility, and modern structural web page design.",
+    skillsLearned: ["HTML5", "Semantic Architecture", "Web Standards", "Accessibility"]
+  }
+];
 
 const SKILL_CATEGORIES = [
   {
@@ -47,18 +118,21 @@ const SKILL_CATEGORIES = [
 ];
 
 function Academics() {
+  const [activeCertModal, setActiveCertModal] = useState(null);
+
   return (
     <section className="page">
       <div className="page-container">
-        <div className="page-label">02 / ACADEMICS &amp; SKILLS</div>
+        <div className="page-label">02 / ACADEMICS, CERTS &amp; SKILLS</div>
 
         <h1 className="page-title">
-          My <span>Education &amp; Skills.</span>
+          Education &amp; <span>Certifications.</span>
         </h1>
 
         <p className="page-description">
           My academic foundation at <strong>SDM College of Engineering (SDMCET)</strong>,
-          practical extracurricular participation, and my full technical skills repertoire.
+          verified industry certifications from <strong>Google</strong> and{" "}
+          <strong>Infosys Springboard</strong>, and my full technical skills repertoire.
         </p>
 
         {/* Academic Journey Cards */}
@@ -94,6 +168,62 @@ function Academics() {
               Engineered and shipped a full-fledged vehicle servicing web application
               within a rapid 72-hour challenge, complete with service booking and dark-mode UI.
             </p>
+          </div>
+        </div>
+
+        {/* =========================================
+           VERIFIED CERTIFICATIONS SHOWCASE
+           ========================================= */}
+        <div className="certifications-section-wrapper" id="certifications">
+          <div className="skills-heading-container">
+            <h2 className="section-subtitle">
+              Verified <span>Certifications</span>
+            </h2>
+            <p className="skills-subtitle">
+              Official industry credentials earned from Google (Coursera) and Infosys Springboard in Artificial Intelligence, Prompt Engineering, and Web Development.
+            </p>
+          </div>
+
+          <div className="certifications-grid">
+            {CERTIFICATES.map((cert) => (
+              <div key={cert.id} className="cert-card">
+                <div
+                  className="cert-img-box"
+                  onClick={() => setActiveCertModal(cert)}
+                  title="Click to view full certificate"
+                >
+                  <img
+                    src={cert.image}
+                    alt={cert.title}
+                    className="cert-thumbnail"
+                  />
+                  <div className="cert-img-overlay">
+                    <span className="expand-pill">🔍 View Certificate</span>
+                  </div>
+                </div>
+
+                <div className="cert-info">
+                  <div className="cert-badges-row">
+                    <span className={`issuer-tag tag-${cert.issuerType}`}>
+                      {cert.issuer}
+                    </span>
+                    <span className="cert-date">{cert.date}</span>
+                  </div>
+
+                  <h3 className="cert-title">{cert.title}</h3>
+                  <div className="cert-courses">{cert.courses}</div>
+                  <p className="cert-description">{cert.description}</p>
+
+                  <div className="cert-skills-chips">
+                    {cert.skillsLearned.map((skill, sIdx) => (
+                      <span key={sIdx} className="cert-skill-pill">
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 
@@ -146,6 +276,8 @@ function Academics() {
               <span className="pill-item">CSS3</span>
               <span className="pill-item">React Router</span>
               <span className="pill-item">Vite</span>
+              <span className="pill-item">Google AI</span>
+              <span className="pill-item">Prompt Engineering</span>
               <span className="pill-item">AI Essentials</span>
               <span className="pill-item">Machine Learning</span>
               <span className="pill-item">Git &amp; GitHub</span>
@@ -156,6 +288,36 @@ function Academics() {
           </div>
         </div>
       </div>
+
+      {/* Modal Full Certificate Viewer */}
+      {activeCertModal && (
+        <div
+          className="image-modal-backdrop"
+          onClick={() => setActiveCertModal(null)}
+        >
+          <div
+            className="image-modal-content"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="image-modal-header">
+              <h3>{activeCertModal.title} · {activeCertModal.issuer}</h3>
+              <button
+                className="close-modal-btn"
+                onClick={() => setActiveCertModal(null)}
+              >
+                ✕
+              </button>
+            </div>
+            <div className="image-modal-body">
+              <img
+                src={activeCertModal.image}
+                alt={activeCertModal.title}
+                className="modal-expanded-img"
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
